@@ -1,0 +1,266 @@
+@define-color critical #ff0000; /* critical color */
+@define-color warning #f3f809;  /* warning color */
+@define-color fgcolor #ffffff;  /* foreground color */
+@define-color bgcolor #303030;  /* background color */
+@define-color bgcolor #222436;  /* background color */
+@define-color alert   #df3320;
+
+@define-color accent1 #ff7a93;
+@define-color accent2 #b9f27c;
+@define-color accent3 #ff9e64;
+@define-color accent4 #bb9af7;
+@define-color accent5 #7da6ff;
+@define-color accent6 #0db9d7;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono", Roboto, Helvetica, Arial, sans-serif;
+    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+
+    background-color: transparent;
+    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    /* border-radius: 4px; */
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#workspaces button {
+    padding: 6px; /* Increase this to make the entire bar larger */
+    margin: 3px 1px 3px 1px;
+    /* background-color: transparent; */
+    background: #1f1f1f;
+    color: #ffffff;
+    border-radius: 20px;
+    /* min-width: 36px; */
+}
+
+#workspaces button.active {
+    /* padding: 0 0 0 0; */
+    /* margin: 4px 0 6px 0; */
+    background-color: lightblue;
+    color: black;
+    border-radius: 20px;
+    /* min-width: 36px; */
+}
+
+#workspaces button:hover {
+    background: lightblue;
+    color: black;
+    /* border-bottom: 3px solid #101010; */
+}
+
+#workspaces button.focused {
+    background-color: #1f1f1f;
+    /* color: #323232; */
+}
+
+#workspaces button.focused:hover {
+    background: lightblue;
+    color: black;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+/* #idle_inhibitor, */
+#custom-update,
+#custom-audiorec,
+#custom-music,
+#custom-battery {
+    padding: 0px 10px;
+    /* margin: 4px 3px 5px 3px; */
+    color: @fgcolor;
+    /* background-color:transparent; */
+}
+
+#tray {
+    padding: 0px 5px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 4px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #333333;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#tray {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+}
+
+#custom-music {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#cpu {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 20%, #2BD2FF 50%, #2BD2FF 80%);
+    color: black;
+}
+
+#memory {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #2BD2FF 0%, #2BD2FF 37%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: 4px;
+    padding-left: 5px;
+}
+
+#temperature {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+}
+
+#temperature.critical {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(90deg, #2BD2FF 0%, @critical 52%, #2BD2FF 90%);
+    color: black;
+}
+
+#network {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #FA8BFF 0%, #2BD2FF 80%, #2BD2FF 90%);
+    color: black;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 4px;
+    padding-right: 5px;
+}
+
+#network.disconnected {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: @alert;
+}
+
+#custom-updates {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+}
+
+#custom-battery {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: black;
+    /* color: @accent5; */
+}
+
+#custom-battery.quarter {
+    background-color: @warning;
+}
+
+#custom-battery.critical {
+    background-color: @critical;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(-45deg, #2BD2FF 0%, #2BD2FF 25%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: 4px;
+    padding-left: 5px;
+}
+
+#pulseaudio.muted {
+    /* color: red; */
+    color: #a0a0a0;
+}
+
+/* #idle_inhibitor {
+    background-color: #343434;
+    border-radius: 4px;
+} */
+
+#custom-audiorec {
+    color: #c71585;
+}

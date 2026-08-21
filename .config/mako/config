@@ -1,0 +1,15 @@
+
+font=ubuntu-regular 10
+background-color=#20212977
+
+border-color=#770b8cee
+border-radius=5
+
+progress-color= over #770b8cff
+
+icons=1
+
+default-timeout=8000
+ignore-timeout=0
+
+anchor=top-right
