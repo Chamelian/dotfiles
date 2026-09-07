@@ -6,6 +6,7 @@
     "width": 2000,
     "margin": "5, 0, 2, 0",
     "modules-center": [
+        "custom/weatherDummy",
         "image#weatherIcon",
         "custom/weatherDescription",
         "custom/weatherTemperature",
@@ -13,35 +14,40 @@
         "custom/weatherHumidity",
         "custom/weatherWind"
     ],
+    "custom/weatherDummy": {
+        "format": "",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh"
+    },
     "image#weatherIcon": {
         "size": 20,
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -i"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -i"
     },
     "custom/weatherDescription": {
         "format": "{}",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -d"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -d"
     },
     "custom/weatherTemperature": {
         "format": "{}°F",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -t"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -t"
     },
     "custom/weatherFeelsLike": {
         "format": "Feels Like {}°F",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -f"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -f"
     },
     "custom/weatherHumidity": {
         "format": "{}% Humidity",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -h"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -h"
     },
     "custom/weatherWind": {
         "format": "{} Mph Wind Speed",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -w"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -w"
     }
 },
 {
@@ -61,32 +67,32 @@
     ],
     "image#weatherIcon": {
         "size": 20,
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -i"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -i"
     },
     "custom/weatherDescription": {
         "format": "{}",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -d"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -d"
     },
     "custom/weatherTemperature": {
         "format": "{}°F",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -t"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -t"
     },
     "custom/weatherFeelsLike": {
         "format": "Feels Like {}°F",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -f"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -f"
     },
     "custom/weatherHumidity": {
         "format": "{}% Humidity",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -h"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -h"
     },
     "custom/weatherWind": {
         "format": "{} Mph Wind Speed",
-        "interval": 300,
-        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -w"
+        "interval": 310,
+        "exec": "$HOME/.config/waybar/scripts/updateWeather.sh -w"
     }   
 }]
