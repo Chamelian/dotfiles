@@ -31,9 +31,33 @@ vim.keymap.set("n", "<leader>d", ":NvimTreeClose<CR> <Bar> :lua require('dapui')
 require("user.DAP")
 
 -- Treesitter
-require("nvim-treesitter").install({ "rust", "javascript", "typescript", "python", "php", "yaml", "css", "html", "sql" })
+require("nvim-treesitter").install({
+	"rust",
+	"javascript",
+	"typescript",
+	"python",
+	"php",
+	"yaml",
+	"css",
+	"html",
+	"sql",
+	"fortran",
+})
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "python", "c", "lua", "rust", "javascript", "typescript", "php", "yaml", "css", "html", "sql" },
+	pattern = {
+		"python",
+		"c",
+		"lua",
+		"rust",
+		"javascript",
+		"typescript",
+		"php",
+		"yaml",
+		"css",
+		"html",
+		"sql",
+		"fortran",
+	},
 	callback = function()
 		vim.treesitter.start()
 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
@@ -41,7 +65,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- LSP Configuration
-vim.lsp.enable({ "lua_ls", "vimls", "basedpyright", "rust_analyzer", "intelephense", "eslint", "ts_ls", "clangd" })
+vim.lsp.enable({
+	"lua_ls",
+	"vimls",
+	"basedpyright",
+	"rust_analyzer",
+	"intelephense",
+	"eslint",
+	"ts_ls",
+	"clangd",
+	"fortls",
+})
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)

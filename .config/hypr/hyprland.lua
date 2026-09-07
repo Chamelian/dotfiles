@@ -1,20 +1,34 @@
 -- Monitors
+--
+-- hl.monitor({
+-- 	output = "DP-3",
+-- 	mode = "5120x1440@240",
+-- 	position = "0x0",
+-- 	scale = 1.25,
+-- })
+-- hl.monitor({
+-- 	output = "DP-1",
+-- 	mode = "2560x1440@60",
+-- 	position = "4096x0",
+-- 	scale = 1.25,
+-- })
+-- hl.monitor({
+-- 	output = "HDMI-A-1",
+-- 	mode = "1280x720@60",
+-- 	position = "4096x-1152",
+-- 	scale = 1.25,
+-- })
+--
 hl.monitor({
-	output = "DP-3",
-	mode = "5120x1440@240",
+	output = "DP-1",
+	mode = "2560x1440@165",
 	position = "0x0",
 	scale = 1.25,
 })
 hl.monitor({
-	output = "DP-1",
-	mode = "2560x1440@60",
-	position = "4096x0",
-	scale = 1.25,
-})
-hl.monitor({
 	output = "HDMI-A-1",
-	mode = "1280x720@60",
-	position = "4096x-1152",
+	mode = "1920x1080@60",
+	position = "2048x0",
 	scale = 1.25,
 })
 hl.monitor({
@@ -36,6 +50,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wofi --normal-window drun"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo({ action = "toggle", window = "activewindow" }))
 hl.bind(mainMod .. " + F11", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("thunderbird --calendar"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kill -10 $(pgrep -f 'waybar/configurations/weather')"))
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
@@ -79,25 +94,31 @@ hl.window_rule({ match = { class = "^(org.prismlauncher.PrismLauncher)$" }, floa
 hl.window_rule({ match = { title = "^(ALVR)(.*)$" }, float = true })
 
 -- Workspace Rules
-hl.workspace_rule({ workspace = "2", monitor = "DP-1", default = true })
-hl.workspace_rule({ workspace = "4", monitor = "DP-1" })
-hl.workspace_rule({ workspace = "6", monitor = "DP-1" })
-hl.workspace_rule({ workspace = "8", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "6", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-1" })
 
-hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
-hl.workspace_rule({ workspace = "3", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "5", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "7", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "9", monitor = "DP-3" })
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "5", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "7", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "9", monitor = "DP-1" })
 
-hl.workspace_rule({ workspace = "0", monitor = "HDMI-A-1", default = true })
+-- hl.workspace_rule({ workspace = "0", monitor = "HDMI-A-1", default = true })
 
 -- AutoStart
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpaper & firefox & mako & corectrl")
+	-- Main Waybar
 	hl.exec_cmd(
 		'waybar -c "$HOME/.config/waybar/configurations/bare/config" -s "$HOME/.config/waybar/configurations/bare/style.css"'
 	)
+	-- Weather Waybar
+	hl.exec_cmd(
+		'waybar -c "$HOME/.config/waybar/configurations/weather/config" -s "$HOME/.config/waybar/configurations/weather/style.css"'
+	)
+
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")

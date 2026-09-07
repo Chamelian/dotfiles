@@ -1,0 +1,89 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    /* border-radius: 0px; */
+    font-family: "NotoSansMono";
+    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
+    font-size: 14px;
+}
+
+window#waybar {
+
+    background-color: rgba(34, 36, 54, 0);
+    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 4px;
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+.modules-center {
+    background-color: rgba(34, 36, 54, .9);
+    border-radius: 20px
+}
+
+#image,
+#custom-weatherDescription,
+#custom-weatherTemperature,
+#custom-weatherFeelsLike,
+#custom-weatherHumidity,
+#custom-weatherWind {
+    padding: 0px 3px;
+    margin: 4px 3px 5px 3px;
+    color: #ffffff; 
+    background-color:transparent;
+}
+
+#custom-weatherTemperature.critical {
+    color: #c7251a;
+}
+#custom-weatherTemperature.hot {
+    color: #c74e1a;
+}
+#custom-weatherTemperature.warm {
+    color: #e8b431;
+}
+#custom-weatherTemperature.mid {
+    color: #31e8c6;
+}
+#custom-weatherTemperature.cool {
+    color: #31aee8;
+}
+#custom-weatherTemperature.cold {
+    color: #3171e8;
+}
+#custom-weatherTemperature.freezing {
+    color: #3731e8;
+}
+
+#custom-weatherDescription {
+    color: #ab31e8;
+}
+
+#custom-weatherHumidity.critical {
+    color: #c331e8;
+}
+#custom-weatherHumidity.high {
+    color: #e8316e;
+}
+#custom-weatherHumidity.normal {
+    color: #31e893;
+}
+#custom-weatherHumidity.dry {
+    color: #65e831;
+}
+#custom-weatherHumidity.desert {
+    color: #e8d931;
+}
+
+#custom-weatherFeelsLike {
+    color: #4ed927;
+}
+
+#custom-weatherWind {
+    color: #24c3d1;
+}

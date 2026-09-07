@@ -1,9 +1,9 @@
 [{
-    "output": "DP-3",
+    "output": "DP-1",
     "layer": "top",
     "position": "top",
     "height": 35,
-    "width": 4000,
+    "width": 2000,
     "margin": "5, 0, 2, 0",
     // Choose the order of the modules
     "modules-left": [
@@ -130,11 +130,11 @@
     }
 },
 {
-    "output": "DP-1",
+    "output": "HDMI-A-1",
     "layer": "top",
     "position": "top",
     "height": 35,
-    "width": 2000,
+    "width": 1500,
     "margin": "5, 0, 2, 0",
     // Choose the order of the modules
     "modules-left": [

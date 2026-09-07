@@ -1,0 +1,92 @@
+[{
+    "output": "DP-1",
+    "layer": "top",
+    "position": "bottom",
+    "height": 20,
+    "width": 2000,
+    "margin": "5, 0, 2, 0",
+    "modules-center": [
+        "image#weatherIcon",
+        "custom/weatherDescription",
+        "custom/weatherTemperature",
+        "custom/weatherFeelsLike",
+        "custom/weatherHumidity",
+        "custom/weatherWind"
+    ],
+    "image#weatherIcon": {
+        "size": 20,
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -i"
+    },
+    "custom/weatherDescription": {
+        "format": "{}",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -d"
+    },
+    "custom/weatherTemperature": {
+        "format": "{}°F",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -t"
+    },
+    "custom/weatherFeelsLike": {
+        "format": "Feels Like {}°F",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -f"
+    },
+    "custom/weatherHumidity": {
+        "format": "{}% Humidity",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -h"
+    },
+    "custom/weatherWind": {
+        "format": "{} Mph Wind Speed",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -w"
+    }
+},
+{
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "bottom",
+    "height": 20,
+    "width": 1500,
+    "margin": "5, 0, 2, 0",
+    "modules-center": [
+        "image#weatherIcon",
+        "custom/weatherDescription",
+        "custom/weatherTemperature",
+        "custom/weatherFeelsLike",
+        "custom/weatherHumidity",
+        "custom/weatherWind"
+    ],
+    "image#weatherIcon": {
+        "size": 20,
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -i"
+    },
+    "custom/weatherDescription": {
+        "format": "{}",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -d"
+    },
+    "custom/weatherTemperature": {
+        "format": "{}°F",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -t"
+    },
+    "custom/weatherFeelsLike": {
+        "format": "Feels Like {}°F",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -f"
+    },
+    "custom/weatherHumidity": {
+        "format": "{}% Humidity",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -h"
+    },
+    "custom/weatherWind": {
+        "format": "{} Mph Wind Speed",
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/fetchWeather.sh -w"
+    }   
+}]
